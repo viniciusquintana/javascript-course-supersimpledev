@@ -90,6 +90,8 @@ document.querySelectorAll('.js-add-to-cart')
 
       document.querySelector('.js-cart-quantity')
         .innerHTML = cartQuantity;
+
+      const addedMessage = document.querySelector(`.js-added-to-cart-${productId}`);
     });
   });
 
