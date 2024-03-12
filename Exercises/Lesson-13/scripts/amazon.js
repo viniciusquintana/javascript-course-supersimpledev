@@ -95,6 +95,9 @@ document.querySelectorAll('.js-add-to-cart')
 
       addedMessage.classList.add('added-to-cart-visable');
       
+      setTimeout(() => {
+        addedMessage.classList.remove('added-to-cart-visable');
+      }, 2000)
     });
   });
 
