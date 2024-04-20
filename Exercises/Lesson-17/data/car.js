@@ -47,6 +47,31 @@ class Car {
   }
 }
 
+class Racecar extends Car {
+  acceleration;
+
+  constructor(carDetails) {
+    super(carDetails);
+    this.acceleration = carDetails.acceleration;
+  }
+
+  go() {
+    this.speed += this.acceleration;
+
+    if (this.speed > 300) {
+      this.speed = 300;
+    }
+  }
+
+  openTrunk() {
+    console.log('Race cars do not have a trunk.');
+  }
+
+  closeTrunk() {
+    console.log('Race cars do not have a trunk.');
+  }
+}
+
 const car1 = new Car({
   brand: 'toyota',
   model: 'Corolla'
@@ -54,6 +79,11 @@ const car1 = new Car({
 const car2 = new Car({
   brand: 'Tesla',
   model: 'Model 3'
+});
+const raceCar = new Racecar({
+  brand: 'McLaren',
+  model: 'F1',
+  acceleration: 20
 });
 
 console.log(car1);
@@ -78,3 +108,12 @@ car2.go();
 car2.go();
 car2.brake();
 car2.displayInfo();
+
+raceCar.go();
+raceCar.go();
+raceCar.go();
+raceCar.displayInfo();
+raceCar.openTrunk();
+raceCar.displayInfo();
+raceCar.brake();
+raceCar.displayInfo();
